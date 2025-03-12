@@ -1,0 +1,31 @@
+---------------------------------------------------------------------------------
+Pre-requisites
+1. XAMPP
+2. Composer
+3. NodeJS
+4. GIT
+
+---------------------------------------------------------------------------------
+Installation Via Composer
+1. To install latest version
+    composer create-project laravel/laravel project_name
+
+2. To install specific version
+    composer create-project laravel/laravel:^9.0 project_name
+
+Installation via Laravel installer
+composer global require laravel/installer
+laravel new project_name
+
+---------------------------------------------------------------------------------
+Setup GIT Repository
+
+git init
+Then, setup username and email for GIT i.e git config user.name "username" and git config user.email "email"
+git status
+git add .
+git commit -m "My first commit"
+git remote add origin https://github.com/ShubhamDev021/Laravel-beginner-to-advanced.git
+git push origin master
+
+---------------------------------------------------------------------------------
