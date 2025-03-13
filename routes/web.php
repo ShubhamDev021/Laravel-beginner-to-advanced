@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/greeting', function () {
     return "Hello World";
 });
+
+Route::get('/greeting/{id}', function ($id) {
+    return "User ID is " . $id;
+});
