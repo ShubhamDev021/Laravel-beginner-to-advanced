@@ -29,3 +29,8 @@ git remote add origin https://github.com/ShubhamDev021/Laravel-beginner-to-advan
 git push origin master
 
 ---------------------------------------------------------------------------------
+Change hosted port number for application
+
+Go to: vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php
+In function definition of port(), change the line $port = $port ?: 8000; to $port = $port ?: {desired_port_number};
+i.e $port = $port ?: 9000;
