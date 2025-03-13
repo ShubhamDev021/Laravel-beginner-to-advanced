@@ -44,3 +44,8 @@ Route::get('user/{id}', function ($id) {
 Route::get('user/{name}', function ($name) {
     return "User Name: " . $name;
 })->where('id', '[A-Za-z]+');
+
+// Adding constants to Routes: multiple constants
+Route::get('user/{id}/{name}', function ($id, $name) {
+    return "User ID: " . $id . " and User Name: " . $name;
+})->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
