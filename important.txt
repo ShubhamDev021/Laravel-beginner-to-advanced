@@ -1,4 +1,4 @@
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 Pre-requisites
 1. XAMPP
 2. Composer
@@ -17,7 +17,7 @@ Installation via Laravel installer
 composer global require laravel/installer
 laravel new project_name
 
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 Setup GIT Repository
 
 git init
@@ -28,9 +28,21 @@ git commit -m "My first commit"
 git remote add origin https://github.com/ShubhamDev021/Laravel-beginner-to-advanced.git
 git push origin master
 
----------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 Change hosted port number for application
 
 Go to: vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php
 In function definition of port(), change the line $port = $port ?: 8000; to $port = $port ?: {desired_port_number};
 i.e $port = $port ?: 9000;
+
+--------------------------------------------------------------------------------------------------------------------------
+What is closure?
+
+Function without name is known as closure
+Ex: 
+Route::get('/', function () {
+    return view('welcome');
+});
+Here function() is known as closure
+
+--------------------------------------------------------------------------------------------------------------------------
