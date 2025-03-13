@@ -28,3 +28,7 @@ Route::get('/greeting/{id}', function ($id) {
 Route::get('/greeting2/{name?}', function ($name = null) {
     return "User name is " . $name;
 });
+
+Route::get('/greeting3/{name?}', function ($name = "Shubham") {
+    return "User name is " . $name;
+});
