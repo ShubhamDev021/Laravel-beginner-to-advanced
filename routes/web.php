@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,3 +91,5 @@ Route::view('/greeting6', 'greeting', ['name' => "Akansha", 'age' => 30]);
 
 Route::view('/page1', 'layouts.page1');
 Route::view('/page2', 'layouts.page2');
+
+Route::get('users', [UserController::class, 'index']);

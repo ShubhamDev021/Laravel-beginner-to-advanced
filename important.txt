@@ -58,3 +58,12 @@ php artisan view:clear
 php artisan route:clear
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a controller?
+
+php artisan make:controller controller_name
+
+Conventions: 
+1. Controller name should be in Pascal Case syntax i.e. UserController
+2. Controller name should be singular i.e. UserController not UsersController
+
+--------------------------------------------------------------------------------------------------------------------------
