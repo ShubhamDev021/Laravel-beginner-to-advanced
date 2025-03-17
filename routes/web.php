@@ -63,3 +63,8 @@ Route::prefix('admin')->group(function () {
         return "This is admin's coupon route";
     });
 });
+
+//Fallback route: used to show this page when no route matches, typically used to handle 404 requests of application
+Route::fallback(function () {
+    return "Page not found!!!";
+});
