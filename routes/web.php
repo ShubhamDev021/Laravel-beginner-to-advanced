@@ -73,3 +73,8 @@ Route::fallback(function () {
 Route::get('/greeting4', function() {
     return view('greeting');
 });
+
+// Return view using View Facades
+Route::get('/greeting5', function() {
+    return View::make('greeting');
+});
