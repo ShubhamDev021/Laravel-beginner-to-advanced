@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/greeting', function () {
     return "Hello World";
-});
+})->name('greet');
 
 // Parameterized route: required parameter
 Route::get('/greeting/{id}', function ($id) {
