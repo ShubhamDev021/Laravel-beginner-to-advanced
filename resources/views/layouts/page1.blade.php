@@ -76,4 +76,10 @@
     @endisset
     <br><br>
 
+    {{-- unless directive --}}
+    @unless (1 == 2)
+        This condition executed because above condition is false
+    @endunless 
+    <br><br>
+
 @endsection
