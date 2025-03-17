@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello, you're welcome</h1>
+    <h1>Hello {{ $name }}, you're welcome</h1>
 </body>
 </html>
