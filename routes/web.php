@@ -93,3 +93,5 @@ Route::view('/page1', 'layouts.page1');
 Route::view('/page2', 'layouts.page2');
 
 Route::get('users', [UserController::class, 'index']);
+
+Route::get('users/{user_id}', [UserController::class, 'find_user']);
