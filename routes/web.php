@@ -74,8 +74,7 @@ Route::get('/greeting4', function() {
     $name = "Shubham";
     $age = 28;
     return view('greeting')
-    ->with('name', $name)
-    ->with('age', $age);
+    ->with(['name' => $name, 'age' => $age]);
 });
 
 // Return view using View Facades
@@ -83,8 +82,7 @@ Route::get('/greeting5', function() {
     $name = "Ayush";
     $age = 25;
     return View::make('greeting')
-    ->with('name', $name)
-    ->with('age', $age);
+    ->with(['name' => $name, 'age' => $age]);
 });
 
 // Using view routes
