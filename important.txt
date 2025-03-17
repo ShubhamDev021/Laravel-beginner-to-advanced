@@ -52,3 +52,9 @@ For all the routes- php artisan route:list
 For all the developer's created routes(i.e. except vendor's route)- php artisan route:list --except-vendor
 
 --------------------------------------------------------------------------------------------------------------------------
+How to clear view's and route's cache?
+
+php artisan view:clear
+php artisan route:clear
+
+--------------------------------------------------------------------------------------------------------------------------
