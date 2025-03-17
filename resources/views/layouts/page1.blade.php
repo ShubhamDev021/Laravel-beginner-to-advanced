@@ -88,4 +88,16 @@
     @endempty
     <br><br>
 
+    {{-- auth user directive --}}
+    @auth
+        The user is authenticated...
+    @endauth
+    <br><br>
+
+    {{-- guest user directive --}}
+    @guest
+        The user is not authenticated...
+    @endguest
+    <br><br>
+
 @endsection
