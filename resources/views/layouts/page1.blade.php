@@ -82,4 +82,10 @@
     @endunless 
     <br><br>
 
+    {{-- empty directive --}}
+    @empty($records)
+        $records is "empty"...
+    @endempty
+    <br><br>
+
 @endsection
