@@ -78,3 +78,6 @@ Route::get('/greeting4', function() {
 Route::get('/greeting5', function() {
     return View::make('greeting');
 });
+
+// Using view routes
+Route::view('/greeting6', 'greeting');
