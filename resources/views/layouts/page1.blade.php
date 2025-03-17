@@ -50,4 +50,17 @@
     @endfor
     <br><br>
 
+    {{-- foreach loop statement --}}
+    @php
+        $users = array();
+        $users[] = ['id' => 1, 'name' => 'ayush'];
+        $users[] = ['id' => 2, 'name' => 'shubham'];
+        $users[] = ['id' => 3, 'name' => 'akansha'];
+    @endphp
+    @foreach ($users as $user)
+        <p>This is user {{ $user['id'] }}</p>
+        <p>Name: {{ $user['name'] }}</p>
+    @endforeach
+    <br><br>
+
 @endsection
