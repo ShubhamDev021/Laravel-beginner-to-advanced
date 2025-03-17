@@ -46,3 +46,9 @@ Route::get('/', function () {
 Here function() is known as closure
 
 --------------------------------------------------------------------------------------------------------------------------
+How to show the list of all the routes of laravel application?
+
+For all the routes- php artisan route:list
+For all the developer's created routes(i.e. except vendor's route)- php artisan route:list --except-vendor
+
+--------------------------------------------------------------------------------------------------------------------------
