@@ -82,4 +82,4 @@ Route::get('/greeting5', function() {
 });
 
 // Using view routes
-Route::view('/greeting6', 'greeting');
+Route::view('/greeting6', 'greeting', ['name' => "Akansha"]);
