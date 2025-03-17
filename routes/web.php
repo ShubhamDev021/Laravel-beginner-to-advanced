@@ -68,3 +68,8 @@ Route::prefix('admin')->group(function () {
 Route::fallback(function () {
     return "Page not found!!!";
 });
+
+// Return view using view function
+Route::get('/greeting4', function() {
+    return view('greeting');
+});
