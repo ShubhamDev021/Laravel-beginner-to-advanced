@@ -10,4 +10,12 @@
     @endif
     <br><br>
 
+    {{-- Else statement --}}
+    @if (1 == 2)
+        If block
+    @else
+        Else block
+    @endif
+    <br><br>
+
 @endsection
