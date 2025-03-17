@@ -49,3 +49,6 @@ Route::get('user/{name}', function ($name) {
 Route::get('user/{id}/{name}', function ($id, $name) {
     return "User ID: " . $id . " and User Name: " . $name;
 })->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);
+
+// Redirect to another route
+Route::redirect('/redirect-route', '/');
