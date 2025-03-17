@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>Hello {{ $name }}, you're welcome</h1>
+    <h1>You are {{ $age }} years old</h1>
 </body>
 </html>
