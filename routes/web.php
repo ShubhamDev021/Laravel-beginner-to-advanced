@@ -72,7 +72,7 @@ Route::fallback(function () {
 // Return view using view function
 Route::get('/greeting4', function() {
     $name = "Shubham";
-    return view('greeting', ['name' => $name]);
+    return view('greeting', compact('name'));
 });
 
 // Return view using View Facades
