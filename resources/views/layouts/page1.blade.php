@@ -63,4 +63,11 @@
     @endforeach
     <br><br>
 
+    {{-- while loop statement --}}
+    @php $i = 1; @endphp
+    @while ($i <= 5)
+        <p>Value: {{ $i }}</p>
+        @php $i++ @endphp
+    @endwhile
+
 @endsection
