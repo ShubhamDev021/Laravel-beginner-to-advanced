@@ -70,4 +70,10 @@
         @php $i++ @endphp
     @endwhile
 
+    {{-- isset directive --}}
+    @isset($records)
+        $records is defined and is not null...
+    @endisset
+    <br><br>
+
 @endsection
