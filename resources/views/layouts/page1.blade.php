@@ -18,4 +18,14 @@
     @endif
     <br><br>
 
+    {{-- Else if ladder statement --}}
+    @if (1 == 2)
+        If block
+    @elseif (2 == 2)
+        Else if block
+    @else
+        Else block
+    @endif
+    <br><br>
+
 @endsection
