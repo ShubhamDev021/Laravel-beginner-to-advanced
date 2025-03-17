@@ -43,4 +43,11 @@
     @endswitch
     <br><br>
 
+    {{-- for loop statement --}}
+    @for ($i = 0; $i < 10; $i++)
+        The current value is {{ $i }}
+        <br>
+    @endfor
+    <br><br>
+
 @endsection
