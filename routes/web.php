@@ -73,14 +73,18 @@ Route::fallback(function () {
 Route::get('/greeting4', function() {
     $name = "Shubham";
     $age = 28;
-    return view('greeting', compact('name', 'age'));
+    return view('greeting')
+    ->with('name', $name)
+    ->with('age', $age);
 });
 
 // Return view using View Facades
 Route::get('/greeting5', function() {
     $name = "Ayush";
     $age = 25;
-    return View::make('greeting', compact('name', 'age'));
+    return View::make('greeting')
+    ->with('name', $name)
+    ->with('age', $age);
 });
 
 // Using view routes
