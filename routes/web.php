@@ -78,7 +78,7 @@ Route::get('/greeting4', function() {
 // Return view using View Facades
 Route::get('/greeting5', function() {
     $name = "Ayush";
-    return View::make('greeting', compact('name'));
+    return View::make('greeting')->with('name', $name);
 });
 
 // Using view routes
