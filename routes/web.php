@@ -52,3 +52,14 @@ Route::get('user/{id}/{name}', function ($id, $name) {
 
 // Redirect to another route
 Route::redirect('/redirect-route', '/');
+
+// Grouping of routes
+Route::prefix('admin')->group(function () {
+    Route::get('/users', function () {
+        return "This is admin's user route";
+    });
+    
+    Route::get('/coupon', function () {
+        return "This is admin's coupon route";
+    });
+});
