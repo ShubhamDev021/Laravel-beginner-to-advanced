@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -95,3 +96,5 @@ Route::view('/page2', 'layouts.page2');
 Route::get('users', [UserController::class, 'index']);
 
 Route::get('users/{user_id}', [UserController::class, 'find_user']);
+
+Route::resource('/posts', PostController::class);

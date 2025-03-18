@@ -67,3 +67,20 @@ Conventions:
 2. Controller name should be singular i.e. UserController not UsersController
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a resource controller?
+
+php artisan make:controller controller_name --resource
+This controller automatically creates various methods such as index(), create(), store(), show(), edit(), update() and destroy()
+
+We create route of a resource controller as Route::resource('/url', controller_name::class);
+We can see the created routes by this resource route using php artisan route:list --except-vendor
+This route automatically creates various methods such as 
+GET-posts ....................................................................... posts.index › PostController@index  
+POST-posts ...................................................................... posts.store › PostController@store  
+GET-posts/create ................................................................ posts.create › PostController@create  
+GET-posts/{post} ................................................................ posts.show › PostController@show  
+PUT|PATCH-posts/{post} .......................................................... posts.update › PostController@update  
+DELETE-posts/{post} ............................................................. posts.destroy › PostController@destroy  
+GET-posts/{post}/edit ........................................................... posts.edit › PostController@edit  
+
+--------------------------------------------------------------------------------------------------------------------------
