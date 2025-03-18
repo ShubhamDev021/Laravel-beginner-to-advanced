@@ -112,4 +112,10 @@ Then,
 (a). use php artisan migrate:refresh (it rollback all the migrations and then execute migration again)
 (b). or php artisan migrate:fresh (it drop all the tables and then execute migration again)
 
+Method 2: 
+1. Use php artisan make:migration add_columnname_column_into_table --table=table_name
+   i.e. php artisan make:migration add_is_active_column_into_table --table=posts
+2. Then, add a line to add a column in new migration file
+3. Use php artisan migrate
+
 --------------------------------------------------------------------------------------------------------------------------
