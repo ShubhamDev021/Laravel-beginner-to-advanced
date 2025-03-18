@@ -144,3 +144,8 @@ By the above statement, laravel automatically know that user_id is foreign key l
 Here we can pass 'users' in constrained() i.e. constrained('users') but as we have already followed the laravel conventions, we do not need to add it here
 
 --------------------------------------------------------------------------------------------------------------------------
+How to check migration status?
+
+php artisan migrate:status
+
+--------------------------------------------------------------------------------------------------------------------------
