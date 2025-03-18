@@ -136,3 +136,11 @@ php artisan migrate:rollback --path=migration_path
 i.e. php artisan migrate:rollback --path=database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a foreign key constraint?
+
+$table->foreignId('user_id')->contrained();
+Here user_id is according to syntax i.e. singular of table name (user) and id ('id' column of table 'user')
+By the above statement, laravel automatically know that user_id is foreign key linked with 'users' table
+Here we can pass 'users' in constrained() i.e. constrained('users') but as we have already followed the laravel conventions, we do not need to add it here
+
+--------------------------------------------------------------------------------------------------------------------------
