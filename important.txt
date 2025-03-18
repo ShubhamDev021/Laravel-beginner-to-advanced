@@ -130,3 +130,9 @@ php artisan migrate:rollback --step=n
 i.e. For rollbacking last 2 migrations, use php artisan migrate:rollback --step=2
 
 --------------------------------------------------------------------------------------------------------------------------
+How to rollback a specific migration?
+
+php artisan migrate:rollback --path=migration_path
+i.e. php artisan migrate:rollback --path=database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php
+
+--------------------------------------------------------------------------------------------------------------------------
