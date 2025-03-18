@@ -89,3 +89,18 @@ Where does database related configurations present?
 In .env file database, redis, mail etc related configurations are kept
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create migrations in laravel?
+
+Using artisan command: php artisan make:migration migration_name
+
+Conventions: 
+1. Table name should be plural i.e. create_post_table is invalid while create_posts_table is valid
+2. To create a table format(create_tablename_table): php artisan make:migration create_posts_table
+3. If you want to create table with another name say new_table_name, then pass argument --table=new_table_name
+   i.e. php artisan make:migration create_posts_table --table=blog_posts
+
+NOTE: In migration file, there are two methods up() and down()
+up() method executes when we perform the migration
+down() method executes when we rollback the migration
+
+--------------------------------------------------------------------------------------------------------------------------
