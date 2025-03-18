@@ -124,3 +124,9 @@ How to rollback last batch migrations?
 php artisan migrate:rollback
 
 --------------------------------------------------------------------------------------------------------------------------
+How to rollback last n migrations?
+
+php artisan migrate:rollback --step=n
+i.e. For rollbacking last 2 migrations, use php artisan migrate:rollback --step=2
+
+--------------------------------------------------------------------------------------------------------------------------
