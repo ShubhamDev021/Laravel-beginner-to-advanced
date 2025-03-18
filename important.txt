@@ -104,3 +104,12 @@ up() method executes when we perform the migration
 down() method executes when we rollback the migration
 
 --------------------------------------------------------------------------------------------------------------------------
+How to add a column in existing table?
+
+Method 1: 
+Add a line to add a column in existing create_migration file
+Then, 
+(a). use php artisan migrate:refresh (it rollback all the migrations and then execute migration again)
+(b). or php artisan migrate:fresh (it drop all the tables and then execute migration again)
+
+--------------------------------------------------------------------------------------------------------------------------
