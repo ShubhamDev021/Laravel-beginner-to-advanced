@@ -17,24 +17,24 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title" id="title">
+                    <input type="text" class="form-control" name="title" id="title" required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="description"></textarea>
+                    <textarea class="form-control" name="description" id="description" required></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="is_active" class="form-label">Active</label>
-                    <select class="form-control" name="is_active" id="is_active">
-                        <option selected disabled>----Choose option----</option>
+                    <select class="form-control" name="is_active" id="is_active" required>
+                        <option value="" selected disabled>----Choose option----</option>
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="is_published" class="form-label">Published</label>
-                    <select class="form-control" name="is_published" id="is_published">
-                        <option selected disabled>----Choose option----</option>
+                    <select class="form-control" name="is_published" id="is_published" required>
+                        <option value="" selected disabled>----Choose option----</option>
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
