@@ -141,3 +141,11 @@ Route::get('find-post-by-specific-conditions-AND/{value1}/{value2}', function ($
 
     return $post;
 });
+
+Route::get('find-post-by-specific-conditions-OR/{value1}/{value2}', function ($value1, $value2) {
+    $post = Post::where('title', $value1)
+                ->orwhere('is_active', $value2)
+                ->get();
+
+    return $post;
+});
