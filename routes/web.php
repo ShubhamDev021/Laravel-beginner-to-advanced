@@ -159,3 +159,13 @@ Route::get('update-post/{id}', function ($id) {
 
     return "Data updated successfully";
 });
+
+Route::get('delete-post/{id}', function ($id) {
+    $post = Post::find($id);
+    if (! $post) {
+        return "Post not found!!!";
+    }
+    $post->delete();
+
+    return "Data deleted successfully";
+});
