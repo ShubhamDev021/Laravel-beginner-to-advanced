@@ -34,7 +34,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return "Form subitted successfully!!!";
+        return $request->all();
     }
 
     /**

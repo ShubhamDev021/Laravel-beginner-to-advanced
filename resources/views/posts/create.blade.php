@@ -17,11 +17,11 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" id="title">
+                    <input type="text" class="form-control" name="title" id="title">
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description"></textarea>
+                    <textarea class="form-control" name="description" id="description"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="is_active" class="form-label">Active</label>
