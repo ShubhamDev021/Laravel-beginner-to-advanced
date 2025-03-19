@@ -174,3 +174,9 @@ In model file, use
 protected $primaryKey = 'column_name';
 
 --------------------------------------------------------------------------------------------------------------------------
+How to prevent autoincrement of primary key in model?
+
+In model file, use
+public $incrementing = false;
+
+--------------------------------------------------------------------------------------------------------------------------
