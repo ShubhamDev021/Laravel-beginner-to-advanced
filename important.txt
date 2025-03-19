@@ -208,3 +208,49 @@ php artisan route:clear
 php artisan view:clear
 
 --------------------------------------------------------------------------------------------------------------------------
+Important functions used by model in CRUD operation
+
+1. C-create: 
+    Post::create([
+        'user_id' => 1,
+        'title' => 'Laravel 11',
+        'description' => 'Laravel 11 is cool',
+        'is_active' => true
+    ]);
+
+R-read: 
+    (1). read all data
+    $posts = Post::all();
+
+    (2). read data by ID
+    $post = Post::find($id);
+
+    (3). read data using specific condition
+    post = Post::where('title', $value)->get();
+
+    (a). AND operation with where() function chaining
+    $post = Post::where('title', $value1)
+                ->where('is_active', $value2)
+                ->get();
+
+    (b). AND operation with single where() function
+    $post = Post::where(['title' => $value1, 'is_active' => $value2])
+                ->get();
+
+    (c). OR operation
+    $post = Post::where('title', $value1)
+                ->orwhere('is_active', $value2)
+                ->get();
+
+U-update: 
+    $post = Post::find($id);
+    $post->update([
+        'title' => 'Laravel 9.1.2',
+        'description' => 'This is new description of laravel 9.1.2'
+    ]);
+
+D-delete: 
+    $post = Post::find($id);
+    $post->delete();
+
+--------------------------------------------------------------------------------------------------------------------------
