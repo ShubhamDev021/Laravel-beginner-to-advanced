@@ -123,3 +123,8 @@ Route::get('find-post-by-id/{id}', function ($id) {
     }
     return $post;
 });
+
+Route::get('find-post-by-specific-condition/{value}', function ($value) {
+    $post = Post::where('title', $value)->get();
+    return $post;
+});
