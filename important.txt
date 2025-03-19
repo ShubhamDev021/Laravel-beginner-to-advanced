@@ -149,3 +149,16 @@ How to check migration status?
 php artisan migrate:status
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a model in laravel?
+
+php artisan make:model Model_Name
+i.e. php artisan make:model Post
+
+Conventions: 
+Model name should be singular
+
+By default here in above example, this model Post will be linked with table posts. But if we want to link this model with another table then, we can use
+In app/Models/Post.php, add this line in class Post
+protected $table = 'posts_new';
+
+--------------------------------------------------------------------------------------------------------------------------
