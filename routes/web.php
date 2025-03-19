@@ -102,10 +102,10 @@ Route::resource('/posts', PostController::class);
 
 Route::get('insert-post', function () {
     Post::create([
-        'user_id' => 1,
-        'title' => 'Laravel 11',
-        'description' => 'Laravel 11 is cool',
-        'is_active' => true
+        'title' => 'Laravel 11.1.2',
+        'description' => 'Laravel 11.1.2 is cool',
+        'is_active' => true,
+        'is_published' => true
     ]);
 
     return "Data inserted successfully!!!";
