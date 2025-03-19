@@ -162,3 +162,9 @@ In app/Models/Post.php, add this line in class Post
 protected $table = 'posts_new';
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a model with migration in laravel?
+
+php artisan make:model Model_Name -m
+i.e. php artisan make:model Gallery -m
+
+--------------------------------------------------------------------------------------------------------------------------
