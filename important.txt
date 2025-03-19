@@ -184,3 +184,7 @@ If you don't want to prefill created_at and updated_at column of table, then use
 public $timestamps = false;
 
 --------------------------------------------------------------------------------------------------------------------------
+If you want to customize the format of your model's timestamps, set the $dateFormat property on your model as
+protected $dateFormat = 'U';
+
+--------------------------------------------------------------------------------------------------------------------------
