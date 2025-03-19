@@ -149,3 +149,13 @@ Route::get('find-post-by-specific-conditions-OR/{value1}/{value2}', function ($v
 
     return $post;
 });
+
+Route::get('update-post/{id}', function ($id) {
+    $post = Post::find($id);
+    $post->update([
+        'title' => 'Laravel 9.1.2',
+        'description' => 'This is new description of laravel 9.1.2'
+    ]);
+
+    return "Data updated successfully";
+});
