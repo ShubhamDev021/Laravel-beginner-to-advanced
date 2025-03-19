@@ -180,3 +180,7 @@ In model file, use
 public $incrementing = false;
 
 --------------------------------------------------------------------------------------------------------------------------
+If you don't want to prefill created_at and updated_at column of table, then use
+public $timestamps = false;
+
+--------------------------------------------------------------------------------------------------------------------------
