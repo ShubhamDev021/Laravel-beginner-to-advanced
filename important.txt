@@ -263,3 +263,16 @@ JS CDN: <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootst
 and place it in bottom <body>
 
 --------------------------------------------------------------------------------------------------------------------------
+Why do we need to send CSRF token when submitting data in a laravel application?
+
+CSRF (Cross-Site Request Forgery) token is used to protect against CSRF attacks
+
+--------------------------------------------------------------------------------------------------------------------------
+How CSRF token prevents CSRF attacks?
+
+CSRF token is a random, unique token generated for each user session.
+Laravel requires that the token is included with every state-changing request (like POST, PUT, PATCH, DELETE).
+When a request is received, Laravel checks if the token matches the one stored in the session.
+If the token is missing or invalid, the request is rejected.
+
+--------------------------------------------------------------------------------------------------------------------------

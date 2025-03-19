@@ -14,6 +14,7 @@
         <div class="col-md-6 offset-3" style="margin-top: 40px;">
             <h1 class="text-center">Create Post</h1>
             <form method="POST" action="{{ route('posts.store') }}">
+                @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" id="title">
