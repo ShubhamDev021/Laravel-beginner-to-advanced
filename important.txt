@@ -168,3 +168,9 @@ php artisan make:model Model_Name -m
 i.e. php artisan make:model Gallery -m
 
 --------------------------------------------------------------------------------------------------------------------------
+How to define primary key in model?
+
+In model file, use
+protected $primaryKey = 'column_name';
+
+--------------------------------------------------------------------------------------------------------------------------
