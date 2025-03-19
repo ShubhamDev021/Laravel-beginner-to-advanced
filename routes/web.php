@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,3 +99,14 @@ Route::get('users', [UserController::class, 'index']);
 Route::get('users/{user_id}', [UserController::class, 'find_user']);
 
 Route::resource('/posts', PostController::class);
+
+Route::get('test', function () {
+    Post::create([
+        'user_id' => 1,
+        'title' => 'Laravel 9',
+        'description' => 'Laravel 9 is cool',
+        'is_active' => true
+    ]);
+
+    return "Data inserted successfully!!!";
+});

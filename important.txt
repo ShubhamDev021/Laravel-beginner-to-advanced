@@ -194,3 +194,9 @@ const CREATED_AT = 'creation_date';
 const UPDATED_AT = 'updated_date';
 
 --------------------------------------------------------------------------------------------------------------------------
+Inserting data using model
+
+NOTE: Before inserting data into a table using model, we must tell model which fields are fillable by model as
+protected $fillable = ['id', 'user_id', 'title', 'description', 'is_active'];
+
+--------------------------------------------------------------------------------------------------------------------------
