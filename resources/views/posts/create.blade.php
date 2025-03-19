@@ -28,26 +28,26 @@
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" required>
+                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title') }}" required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" name="description" id="description" required></textarea>
+                    <textarea class="form-control" name="description" id="description" required>{{ old('description') }}</textarea>
                 </div>
                 <div class="mb-3">
                     <label for="is_active" class="form-label">Active</label>
                     <select class="form-control" name="is_active" id="is_active" required>
                         <option value="" selected disabled>----Choose option----</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option @if(old('is_active') == '1') selected @endif value="1">Yes</option>
+                        <option @if(old('is_active') == '0') selected @endif value="0">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="is_published" class="form-label">Published</label>
                     <select class="form-control" name="is_published" id="is_published" required>
                         <option value="" selected disabled>----Choose option----</option>
-                        <option value="1">Yes</option>
-                        <option value="0">No</option>
+                        <option @if(old('is_published') == '1') selected @endif value="1">Yes</option>
+                        <option @if(old('is_published') == '0') selected @endif value="0">No</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
