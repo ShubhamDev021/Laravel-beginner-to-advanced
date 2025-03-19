@@ -115,3 +115,11 @@ Route::get('show-all-posts', function () {
     $posts = Post::all();
     return $posts;
 });
+
+Route::get('find-post-by-id/{id}', function ($id) {
+    $post = Post::find($id);
+    if (!$post) {
+        return "Post not found!!!";
+    }
+    return $post;
+});
