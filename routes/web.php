@@ -100,13 +100,18 @@ Route::get('users/{user_id}', [UserController::class, 'find_user']);
 
 Route::resource('/posts', PostController::class);
 
-Route::get('test', function () {
+Route::get('insert-post', function () {
     Post::create([
         'user_id' => 1,
-        'title' => 'Laravel 9',
-        'description' => 'Laravel 9 is cool',
+        'title' => 'Laravel 11',
+        'description' => 'Laravel 11 is cool',
         'is_active' => true
     ]);
 
     return "Data inserted successfully!!!";
+});
+
+Route::get('show-all-posts', function () {
+    $posts = Post::all();
+    return $posts;
 });
