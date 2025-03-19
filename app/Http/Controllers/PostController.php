@@ -34,6 +34,13 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'         => 'required|min:3|max:10',
+            'description'   => 'required|min:3|max:500',
+            'is_active'     => 'required',
+            'is_published'  => 'required'
+        ]);
+
         return $request->all();
     }
 
