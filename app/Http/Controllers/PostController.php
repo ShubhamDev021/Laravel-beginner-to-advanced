@@ -14,7 +14,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        return "This is index function of resource controller";
+        $posts = Post::all();
+
+        return view('posts.index', compact('posts'));
     }
 
     /**
