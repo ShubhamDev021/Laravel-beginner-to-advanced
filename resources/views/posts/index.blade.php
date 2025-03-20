@@ -36,6 +36,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{ $posts->render() }}
             @else
                 <h3 class="text-center text-danger">No post found!!!</h3>
             @endif            
