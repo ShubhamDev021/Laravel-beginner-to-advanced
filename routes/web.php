@@ -177,6 +177,9 @@ Route::get('session-using-facade', function () {
     // delete login session
     Session::forget('login');
 
+    // delete all sessions
+    Session::flush();
+
     // check if session exists
     if (Session::has('login')) {
         return "Session exists";
