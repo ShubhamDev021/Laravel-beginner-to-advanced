@@ -38,16 +38,24 @@
                     <label for="is_active" class="form-label">Active</label>
                     <select class="form-control" name="is_active" id="is_active" required>
                         <option value="" selected disabled>----Choose option----</option>
-                        <option @if(old('is_active') == '1') selected @endif value="1">Yes</option>
-                        <option @if(old('is_active') == '0') selected @endif value="0">No</option>
+                        {{-- Using @if blade directive to select old value --}}
+                        {{-- <option @if(old('is_active') == '1') selected @endif value="1">Yes</option>
+                        <option @if(old('is_active') == '0') selected @endif value="0">No</option> --}}
+                        {{-- Using @selected blade directive to select old value --}}
+                        <option @selected(old('is_active') == '1') value="1">Yes</option>
+                        <option @selected(old('is_active') == '0') value="0">No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <label for="is_published" class="form-label">Published</label>
                     <select class="form-control" name="is_published" id="is_published" required>
                         <option value="" selected disabled>----Choose option----</option>
-                        <option @if(old('is_published') == '1') selected @endif value="1">Yes</option>
-                        <option @if(old('is_published') == '0') selected @endif value="0">No</option>
+                        {{-- Using @if blade directive to select old value --}}
+                        {{-- <option @if(old('is_published') == '1') selected @endif value="1">Yes</option>
+                        <option @if(old('is_published') == '0') selected @endif value="0">No</option> --}}
+                        {{-- Using @selected blade directive to select old value --}}
+                        <option @selected(old('is_published') == '1') value="1">Yes</option>
+                        <option @selected(old('is_published') == '0') value="0">No</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
