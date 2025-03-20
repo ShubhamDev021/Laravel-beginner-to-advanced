@@ -45,7 +45,10 @@ class PostController extends Controller
         // return $request->all();
 
         Post::create($request->all());
-        
+
+        //creating a flash session
+        $request->session()->flash('alert-success', 'Post created successfully');
+
         // return view('posts.create', compact('message'));
 
         // return redirect('posts/create');

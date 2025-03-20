@@ -14,12 +14,12 @@
         <div class="col-md-6 offset-3" style="margin-block-start: 40px;">
             <h1 class="text-center">Create Post</h1>
 
-            @isset($message)
+            @if(Session::has('alert-success'))
                 <div class="alert alert-success alert-dismissible">
-                    {{ $message }}
+                    {{ session::get('alert-success') }}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-            @endisset
+            @endif
 
             @if ($errors->any())
                 <div class="alert alert-danger">
