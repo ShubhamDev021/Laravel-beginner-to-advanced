@@ -22,6 +22,7 @@
                             <th scope="col">Description</th>
                             <th scope="col">Active</th>
                             <th scope="col">Published</th>
+                            <th scope="col">Actions</th>
                         </tr>
                     </thead>
                     <tbody class="table-group-divider">
@@ -32,6 +33,13 @@
                                 <td>{{ $post->description }}</td>
                                 <td>@if($post->is_active) Yes @else No @endif</td>
                                 <td>@if($post->is_published) Yes @else No @endif</td>
+                                <td id="outer">
+                                    <a href="" class="btn btn-success inner">View</a>
+                                    <a href="" class="btn btn-info inner">Edit</a>
+                                    <form action="" class="inner">
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
