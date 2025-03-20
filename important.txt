@@ -276,3 +276,18 @@ When a request is received, Laravel checks if the token matches the one stored i
 If the token is missing or invalid, the request is rejected.
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a session using Session facade?
+
+Session::put('key', 'value');
+i.e.: Session::put('login', 'User logged in successfully');
+
+NOTE: once session is created, it will be created untill it's been deleted
+
+--------------------------------------------------------------------------------------------------------------------------
+How to check if session exists using Session facade?
+
+if (Session::has('login')) {
+    //session exists
+}
+
+--------------------------------------------------------------------------------------------------------------------------

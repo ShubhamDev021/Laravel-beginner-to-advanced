@@ -169,3 +169,16 @@ Route::get('delete-post/{id}', function ($id) {
 
     return "Data deleted successfully";
 });
+
+Route::get('session-using-facade', function () {
+    // create a session
+    Session::put('login', 'User logged in successfully');
+
+    // check if session exists
+    if (Session::has('login')) {
+        return "Session exists";
+    }
+    else {
+        return "Session doesn't exists";
+    }
+});
