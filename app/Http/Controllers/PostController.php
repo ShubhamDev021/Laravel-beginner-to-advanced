@@ -46,8 +46,10 @@ class PostController extends Controller
 
         Post::create($request->all());
         
-        $message = "Post created successfully";
-        return view('posts.create', compact('message'));
+        // return view('posts.create', compact('message'));
+
+        // return redirect('posts/create');
+        return redirect()->route('posts.create'); 
     }
 
     /**
