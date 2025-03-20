@@ -17,6 +17,9 @@
             display: inline-block;
         }
     </style>
+
+    {{-- fontawesome CDN --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
     <div class="row">
@@ -43,10 +46,10 @@
                                 <td>@if($post->is_active) Yes @else No @endif</td>
                                 <td>@if($post->is_published) Yes @else No @endif</td>
                                 <td id="outer">
-                                    <a href="" class="btn btn-success inner">View</a>
-                                    <a href="" class="btn btn-info inner">Edit</a>
+                                    <a href="" class="btn btn-success inner"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="" class="btn btn-info inner"><i class="fa-solid fa-edit"></i></a>
                                     <form action="" class="inner">
-                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                        <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>
