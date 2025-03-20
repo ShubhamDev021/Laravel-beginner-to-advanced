@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -41,7 +42,12 @@ class PostController extends Controller
             'is_published'  => 'required'
         ]);
 
-        return $request->all();
+        // return $request->all();
+
+        Post::create($request->all());
+        
+        $message = "Post created successfully";
+        return view('posts.create', compact('message'));
     }
 
     /**

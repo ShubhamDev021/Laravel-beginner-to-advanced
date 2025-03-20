@@ -11,8 +11,15 @@
 <body>
     
     <div class="row">
-        <div class="col-md-6 offset-3" style="margin-top: 40px;">
+        <div class="col-md-6 offset-3" style="margin-block-start: 40px;">
             <h1 class="text-center">Create Post</h1>
+
+            @isset($message)
+                <div class="alert alert-success alert-dismissible">
+                    {{ $message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endisset
 
             @if ($errors->any())
                 <div class="alert alert-danger">
