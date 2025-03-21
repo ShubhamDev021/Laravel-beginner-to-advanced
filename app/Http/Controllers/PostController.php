@@ -101,8 +101,18 @@ class PostController extends Controller
             'is_active'     => 'required',
             'is_published'  => 'required'
         ]);
-        
-        return redirect()->route('posts.edit'); 
+
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->description = $request->description;
+        $post->is_active = $request->is_active;
+        $post->is_published = $request->is_published;
+        $post->save();
+
+        //creating a flash session
+        $request->session()->flash('alert-success', 'Post updated successfully');
+
+        return redirect()->route('posts.index'); 
     }
 
     /**

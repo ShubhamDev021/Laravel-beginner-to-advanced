@@ -26,6 +26,14 @@
         <div class="col-md-6 offset-3" style="margin-block-start: 40px;">
             <h1 class="text-center">Posts</h1>
             @if (count($posts))
+
+                @if(Session::has('alert-success'))
+                    <div class="alert alert-success alert-dismissible">
+                        {{ session::get('alert-success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
