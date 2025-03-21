@@ -47,7 +47,7 @@
                                 <td>@if($post->is_published) Yes @else No @endif</td>
                                 <td id="outer">
                                     <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success inner"><i class="fa-solid fa-eye"></i></a>
-                                    <a href="" class="btn btn-info inner"><i class="fa-solid fa-edit"></i></a>
+                                    <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info inner"><i class="fa-solid fa-edit"></i></a>
                                     <form action="" class="inner">
                                         <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </form>
