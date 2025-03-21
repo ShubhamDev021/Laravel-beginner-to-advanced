@@ -35,6 +35,7 @@
                         <div class="col-md-4"><strong>Published: </strong></div>
                         <div class="col-md-8">@if ($post->is_active) Yes @else No @endif</div>
                     </div>
+                    <a href="{{ url()->previous() }}" class="btn btn-primary text-light"><< Go Back</a>
                 </div>
             @else
                 <h3 class="text-center text-danger">No post found!!!</h3>
