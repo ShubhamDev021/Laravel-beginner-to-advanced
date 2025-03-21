@@ -46,7 +46,7 @@
                                 <td>@if($post->is_active) Yes @else No @endif</td>
                                 <td>@if($post->is_published) Yes @else No @endif</td>
                                 <td id="outer">
-                                    <a href="" class="btn btn-success inner"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="{{ route('posts.show', $post->id) }}" class="btn btn-success inner"><i class="fa-solid fa-eye"></i></a>
                                     <a href="" class="btn btn-info inner"><i class="fa-solid fa-edit"></i></a>
                                     <form action="" class="inner">
                                         <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
