@@ -25,6 +25,7 @@
             @endif --}}
 
             <form method="POST" action="{{ route('posts.update', $post->id) }}">
+                @method('PUT')
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
