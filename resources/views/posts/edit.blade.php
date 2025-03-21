@@ -14,7 +14,7 @@
         <div class="col-md-6 offset-3" style="margin-block-start: 40px;">
             <h1 class="text-center">Edit Post</h1>
 
-            {{-- @if ($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -22,14 +22,14 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif --}}
+            @endif
 
             <form method="POST" action="{{ route('posts.update', $post->id) }}">
                 @method('PUT')
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $post->id) }}" required>
+                    <input type="text" class="form-control" name="title" id="title" value="{{ old('title', $post->title) }}" required>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
