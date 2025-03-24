@@ -30,12 +30,15 @@
             <h1 class="text-center">Posts</h1>
             @if (count($posts))
 
-                @if(Session::has('alert-success'))
+                {{-- showing message using bootstrap --}}
+                {{-- @if(Session::has('alert-success'))
                     <div class="alert alert-success alert-dismissible">
                         {{ session::get('alert-success') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
-                @endif
+                @endif --}}
+
+                <a href="{{ route('posts.create') }}" class="btn btn-primary" style="float: right; margin-bottom: 10px;">Create Post</a>
 
                 <table class="table table-striped table-bordered">
                     <thead>
@@ -97,8 +100,8 @@
             "onclick": null,
             "showDuration": "300",
             "hideDuration": "1000",
-            "timeOut": "60000",
-            "extendedTimeOut": "60000",
+            "timeOut": "3000",
+            "extendedTimeOut": "3000",
             "showEasing": "swing",
             "hideEasing": "linear",
             "showMethod": "fadeIn",
@@ -106,8 +109,11 @@
         };
     </script>
 
+    {{-- showing message using Toastr Jquery --}}
     <script>
-        toastr["success"]("Sample Toastr message");
+        @if(Session::has('alert-success'))
+            toastr["success"]("{{ session::get('alert-success') }}");
+        @endif
     </script>
 </body>
 </html>

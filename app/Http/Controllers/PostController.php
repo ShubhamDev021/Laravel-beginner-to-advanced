@@ -55,7 +55,7 @@ class PostController extends Controller
         // return view('posts.create', compact('message'));
 
         // return redirect('posts/create');
-        return redirect()->route('posts.create'); 
+        return redirect()->route('posts.index'); 
     }
 
     /**
