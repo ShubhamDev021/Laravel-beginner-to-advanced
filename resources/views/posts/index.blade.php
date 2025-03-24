@@ -20,6 +20,9 @@
 
     {{-- fontawesome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    {{-- toastr CSS --}}
+    <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
 </head>
 <body>
     <div class="row">
@@ -75,5 +78,36 @@
 
     {{-- bootstrap JS CDN --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    {{-- toastr Jquery --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    {{-- toastr JS --}}
+    <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+
+    {{-- toastr options --}}
+    <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "60000",
+            "extendedTimeOut": "60000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+
+    <script>
+        toastr["success"]("Sample Toastr message");
+    </script>
 </body>
 </html>

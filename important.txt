@@ -302,3 +302,38 @@ How to delete all sessions using Session facade?
 Session::flush();
 
 --------------------------------------------------------------------------------------------------------------------------
+How to show toastr messages in an application?
+
+Here are the steps to follow:
+1. Download Toastr CSS(toastr.min.css) and include it
+    i.e. <link rel="stylesheet" href="{{ asset('assets/css/toastr.min.css') }}">
+2. Download Toastr JS(toastr.min.js) and include it
+    i.e. <script src="{{ asset('assets/js/toastr.min.js') }}"></script>
+3. Include Toastr Jquery(toastr.min.js)
+    i.e. <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+4. Setup toastr options for custom changes
+    i.e. <script>
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "60000",
+            "extendedTimeOut": "60000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        };
+    </script>
+5. Show message
+    i.e. <script>
+        toastr["success"]("Sample Toastr message");
+    </script>
+
+--------------------------------------------------------------------------------------------------------------------------
