@@ -313,3 +313,9 @@ Route::get('query-builder-raw-sql-query-using-named-bindings-insert-post', funct
 
     return "Data inserted successfully!!!";
 });
+
+Route::get('query-builder-raw-sql-query-using-named-bindings-find-post-by-specific-condition/{value1}/{value2}', function ($value1, $value2) {
+    $post = DB::select('select * from posts where title = :title and is_active = :is_active', ['title' => $value1, 'is_active' => $value2]);
+
+    return $post;
+});
