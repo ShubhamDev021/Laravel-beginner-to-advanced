@@ -100,6 +100,8 @@ Route::get('users/{user_id}', [UserController::class, 'find_user']);
 
 Route::resource('/posts', PostController::class);
 
+Route::get('/posts/undo-soft-delete/{id}', [PostController::class, 'undo_soft_delete'])->name('posts.undo-soft-delete');
+
 Route::get('insert-post', function () {
     Post::create([
         'title' => 'Laravel 11.1.2',

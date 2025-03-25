@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             $table->boolean('is_active')->default(false)->after('description');
+            $table->softDeletes()->after('is_active');
         });
     }
 
@@ -27,6 +28,7 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
+            $table->dropSoftDeletes();
         });
     }
 };

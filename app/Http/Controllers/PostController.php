@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         // $posts = Post::all();
-        $posts = Post::paginate(10);
+        $posts = Post::withTrashed()->paginate(10);
 
         return view('posts.index', compact('posts'));
     }
@@ -119,6 +119,22 @@ class PostController extends Controller
 
         //creating a flash session
         request()->session()->flash('alert-success', 'Post deleted successfully');
+
+        return redirect()->route('posts.index'); 
+    }
+
+    public function undo_soft_delete($id) {
+        $post = Post::withTrashed()->find($id);
+        if (!$post) {
+            abort(404);
+        }
+
+        $post->update([
+            'deleted_at' => null
+        ]);
+
+        //creating a flash session
+        request()->session()->flash('alert-success', 'Post restored successfully');
 
         return redirect()->route('posts.index'); 
     }

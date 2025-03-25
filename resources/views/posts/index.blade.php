@@ -67,6 +67,9 @@
                                         @csrf
                                         <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                                     </form>
+                                    @if ($post->trashed())
+                                    <a href="{{ route('posts.undo-soft-delete', $post->id) }}" class="btn btn-warning inner"><i class="fa-solid fa-undo"></i></a>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach
