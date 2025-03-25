@@ -295,3 +295,9 @@ Route::get('query-builder-raw-sql-query-find-post-by-specific-condition/{value1}
 
     return $post;
 });
+
+Route::get('query-builder-raw-sql-query-update-post/{id}', function ($id) {
+    DB::update('update posts set title = ? and description = ? where id = ?', ['Laravel 9', 'This is new description of laravel 9', $id]);
+
+    return "Data updated successfully";
+});
