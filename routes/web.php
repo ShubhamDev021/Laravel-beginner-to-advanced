@@ -206,3 +206,10 @@ Route::get('query-builder-insert-post', function () {
 
     return "Data inserted successfully!!!";
 });
+
+Route::get('query-builder-show-all-posts', function () {
+    $posts = DB::table('posts')
+            ->get();
+
+    return $posts;
+});
