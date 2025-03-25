@@ -337,3 +337,12 @@ Here are the steps to follow:
     </script>
 
 --------------------------------------------------------------------------------------------------------------------------
+How to create a request in laravel?
+
+Using php artisan make:request RequestName
+i.e. php artisan make:request PostRequest
+
+Requests are made to keep respective dependable code at a single separate place
+In this project we have created a request PostRequest where all the validation code was kept.
+
+--------------------------------------------------------------------------------------------------------------------------
