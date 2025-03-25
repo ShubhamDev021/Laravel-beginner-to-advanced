@@ -289,3 +289,9 @@ Route::get('query-builder-raw-sql-query-show-all-posts', function () {
 
     return $posts;
 });
+
+Route::get('query-builder-raw-sql-query-find-post-by-specific-condition/{value1}/{value2}', function ($value1, $value2) {
+    $post = DB::select('select * from posts where title = ? and is_active = ?', [$value1, $value2]);
+
+    return $post;
+});
