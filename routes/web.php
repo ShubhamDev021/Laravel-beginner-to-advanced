@@ -277,3 +277,9 @@ Route::get('query-builder-delete-post/{id}', function ($id) {
 
     return "Data deleted successfully";
 });
+
+Route::get('query-builder-raw-sql-query-insert-post', function () {
+    DB::insert('insert into posts (title, description, is_active, is_published, deleted_at, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', ['My Third Post', 'This is the content of my third post.', 0, 1, null, now(), now()]);
+
+    return "Data inserted successfully!!!";
+});
