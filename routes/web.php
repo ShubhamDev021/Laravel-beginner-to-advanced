@@ -319,3 +319,9 @@ Route::get('query-builder-raw-sql-query-using-named-bindings-find-post-by-specif
 
     return $post;
 });
+
+Route::get('query-builder-raw-sql-query-using-named-bindings-update-post/{id}', function ($id) {
+    DB::update('update posts set title = :title and description = :description where id = :id', ['title' => 'Laravel 9', 'description' => 'This is new description of laravel 9', 'id' => $id]);
+
+    return "Data updated successfully";
+});
