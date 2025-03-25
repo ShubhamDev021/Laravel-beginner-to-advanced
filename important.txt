@@ -208,7 +208,7 @@ php artisan route:clear
 php artisan view:clear
 
 --------------------------------------------------------------------------------------------------------------------------
-Important functions used by model in CRUD operation
+Important functions used by model Eloquent in CRUD operation
 
 1. C-create: 
     Post::create([
@@ -344,5 +344,67 @@ i.e. php artisan make:request PostRequest
 
 Requests are made to keep respective dependable code at a single separate place
 In this project we have created a request PostRequest where all the validation code was kept.
+
+--------------------------------------------------------------------------------------------------------------------------
+Important functions used by Query builder in CRUD operation
+
+1. C-create: 
+    DB::table('posts')
+        ->insert([
+            'title' => 'My First Post',
+            'description' => 'This is the content of my first post.',
+            'is_active' => 1,
+            'is_published' => 0,
+            'deleted_at' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+R-read: 
+    (1). read all data
+    $posts = DB::table('posts')
+            ->get();
+
+    (2). read data by ID
+    $post = DB::table('posts')
+            ->find($id);
+
+    (3). read data using specific condition
+    $post = DB::table('posts')
+            ->where('title', $value)
+            ->get();
+
+    (a). AND operation with where() function chaining
+    $post = DB::table('posts')
+            ->where('title', $value1)
+            ->where('is_active', $value2)
+            ->get();
+
+    (b). AND operation with single where() function
+    $post = DB::table('posts')
+            ->where([
+                'title'     =>  $value1,
+                'is_active' =>  $value2
+            ])
+            ->get();
+
+    (c). OR operation
+    $post = DB::table('posts')
+            ->where('title', $value1)
+            ->orwhere('is_active', $value2)
+            ->get();
+
+U-update: 
+    $post = DB::table('posts')
+            ->where('id', $id)
+            ->update([
+                'title' => 'Laravel 9',
+                'description' => 'This is new description of laravel 9'
+            ]);
+
+D-delete: 
+    $post = DB::table('posts')
+            ->where('id', $id)
+            ->delete();
 
 --------------------------------------------------------------------------------------------------------------------------
