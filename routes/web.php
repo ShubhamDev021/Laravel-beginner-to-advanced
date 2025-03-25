@@ -283,3 +283,9 @@ Route::get('query-builder-raw-sql-query-insert-post', function () {
 
     return "Data inserted successfully!!!";
 });
+
+Route::get('query-builder-raw-sql-query-show-all-posts', function () {
+    $posts = DB::select('select * from posts');
+
+    return $posts;
+});
