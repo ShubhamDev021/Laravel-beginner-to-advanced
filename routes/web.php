@@ -307,3 +307,9 @@ Route::get('query-builder-raw-sql-query-delete-post/{id}', function ($id) {
 
     return "Data deleted successfully";
 });
+
+Route::get('query-builder-raw-sql-query-using-named-bindings-insert-post', function () {
+    DB::insert('insert into posts (title, description, is_active, is_published, deleted_at, created_at, updated_at) values (:title, :description, :is_active, :is_published, :deleted_at, :created_at, :updated_at)', ['title' => 'My Third Post', 'description' => 'This is the content of my third post.', 'is_active' => 0, 'is_published' => 1, 'deleted_at' => null, 'created_at' => now(), 'updated_at' => now()]);
+
+    return "Data inserted successfully!!!";
+});
