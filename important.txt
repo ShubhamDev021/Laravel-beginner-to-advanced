@@ -413,3 +413,35 @@ Why is there a need of SQL raw query execution in query builder?
 To prevent SQL injection attack
 
 --------------------------------------------------------------------------------------------------------------------------
+Important functions used by Query builder to execute raw SQL queries in CRUD operation
+
+1. C-create: 
+
+    DB::insert('insert into posts (title, description, is_active, is_published, deleted_at, created_at, updated_at) values (?, ?, ?, ?, ?, ?, ?)', ['My Third Post', 'This is the content of my third post.', 0, 1, null, now(), now()]);
+
+    -using-named-bindings
+    DB::insert('insert into posts (title, description, is_active, is_published, deleted_at, created_at, updated_at) values (:title, :description, :is_active, :is_published, :deleted_at, :created_at, :updated_at)', ['title' => 'My Third Post', 'description' => 'This is the content of my third post.', 'is_active' => 0, 'is_published' => 1, 'deleted_at' => null, 'created_at' => now(), 'updated_at' => now()]);
+
+R-read: 
+    (1). read all data
+    $posts = DB::select('select * from posts');
+
+    (2). read data using specific condition
+    $post = DB::select('select * from posts where title = ? and is_active = ?', [$value1, $value2]);
+
+    -using-named-bindings
+    $post = DB::select('select * from posts where title = :title and is_active = :is_active', ['title' => $value1, 'is_active' => $value2]);
+
+U-update: 
+    DB::update('update posts set title = ? and description = ? where id = ?', ['Laravel 9', 'This is new description of laravel 9', $id]);
+
+    -using-named-bindings
+    DB::update('update posts set title = :title and description = :description where id = :id', ['title' => 'Laravel 9', 'description' => 'This is new description of laravel 9', 'id' => $id]);
+
+D-delete: 
+    DB::delete('delete posts where id = ?', [$id]);
+
+    -using-named-bindings
+    DB::delete('delete posts where id = :id', ['id' => $id]);
+
+--------------------------------------------------------------------------------------------------------------------------
