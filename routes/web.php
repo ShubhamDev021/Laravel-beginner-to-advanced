@@ -325,3 +325,9 @@ Route::get('query-builder-raw-sql-query-using-named-bindings-update-post/{id}', 
 
     return "Data updated successfully";
 });
+
+Route::get('query-builder-raw-sql-query-using-named-bindings-delete-post/{id}', function ($id) {
+    DB::delete('delete posts where id = :id', ['id' => $id]);
+
+    return "Data deleted successfully";
+});
