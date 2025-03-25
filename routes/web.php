@@ -223,3 +223,11 @@ Route::get('query-builder-find-post-by-id/{id}', function ($id) {
 
     return $post;
 });
+
+Route::get('query-builder-find-post-by-specific-condition/{value}', function ($value) {
+    $post = DB::table('posts')
+            ->where('title', $value)
+            ->get();
+
+    return $post;
+});
