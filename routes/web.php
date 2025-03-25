@@ -213,3 +213,13 @@ Route::get('query-builder-show-all-posts', function () {
 
     return $posts;
 });
+
+Route::get('query-builder-find-post-by-id/{id}', function ($id) {
+    $post = DB::table('posts')
+            ->find($id);
+    if (!$post) {
+        return "Post not found!!!";
+    }
+
+    return $post;
+});
