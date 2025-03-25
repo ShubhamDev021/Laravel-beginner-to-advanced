@@ -258,3 +258,14 @@ Route::get('query-builder-find-post-by-specific-conditions-OR/{value1}/{value2}'
 
     return $post;
 });
+
+Route::get('query-builder-update-post/{id}', function ($id) {
+    $post = DB::table('posts')
+            ->where('id', $id)
+            ->update([
+                'title' => 'Laravel 9',
+                'description' => 'This is new description of laravel 9'
+            ]);
+
+    return "Data updated successfully";
+});
