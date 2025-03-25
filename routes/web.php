@@ -234,9 +234,17 @@ Route::get('query-builder-find-post-by-specific-condition/{value}', function ($v
 
 Route::get('query-builder-find-post-by-specific-conditions-AND/{value1}/{value2}', function ($value1, $value2) {
     //where() chaining method
+    // $post = DB::table('posts')
+    //         ->where('title', $value1)
+    //         ->where('is_active', $value2)
+    //         ->get();
+
+    //single where() method
     $post = DB::table('posts')
-            ->where('title', $value1)
-            ->where('is_active', $value2)
+            ->where([
+                'title'     =>  $value1,
+                'is_active' =>  $value2
+            ])
             ->get();
 
     return $post;
