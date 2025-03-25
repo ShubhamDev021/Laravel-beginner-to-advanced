@@ -301,3 +301,9 @@ Route::get('query-builder-raw-sql-query-update-post/{id}', function ($id) {
 
     return "Data updated successfully";
 });
+
+Route::get('query-builder-raw-sql-query-delete-post/{id}', function ($id) {
+    DB::delete('delete posts where id = ?', [$id]);
+
+    return "Data deleted successfully";
+});
