@@ -269,3 +269,11 @@ Route::get('query-builder-update-post/{id}', function ($id) {
 
     return "Data updated successfully";
 });
+
+Route::get('query-builder-delete-post/{id}', function ($id) {
+    $post = DB::table('posts')
+            ->where('id', $id)
+            ->delete();
+
+    return "Data deleted successfully";
+});
