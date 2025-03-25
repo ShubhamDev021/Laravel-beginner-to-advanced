@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -189,4 +190,19 @@ Route::get('session-using-facade', function () {
     else {
         return "Session doesn't exists";
     }
+});
+
+Route::get('query-builder-insert-post', function () {
+    DB::table('posts')
+    ->insert([
+        'title' => 'My Second Post',
+        'description' => 'This is the content of my second post.',
+        'is_active' => 1,
+        'is_published' => 1,
+        'deleted_at' => null,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    return "Data inserted successfully!!!";
 });
