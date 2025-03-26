@@ -340,3 +340,8 @@ Route::get('relationship-one-to-one', function () {
     //NOTE: here if multiple posts are created with same user_id then, also we will show only first encountered post
     return $user->post;
 });
+
+Route::get('relationship-one-to-one-inverse', function () {
+    $post = Post::first();
+    return $post->user;
+});
