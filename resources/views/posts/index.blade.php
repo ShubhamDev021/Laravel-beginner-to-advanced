@@ -28,6 +28,7 @@
     <div class="row">
         <div class="col-md-6 offset-3" style="margin-block-start: 40px;">
             <h1 class="text-center">Posts</h1>
+            <a href="{{ route('posts.create') }}" class="btn btn-primary" style="float: right; margin-bottom: 10px;">Create Post</a>
             @if (count($posts))
 
                 {{-- showing message using bootstrap --}}
@@ -37,8 +38,6 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif --}}
-
-                <a href="{{ route('posts.create') }}" class="btn btn-primary" style="float: right; margin-bottom: 10px;">Create Post</a>
 
                 <table class="table table-striped table-bordered">
                     <thead>
