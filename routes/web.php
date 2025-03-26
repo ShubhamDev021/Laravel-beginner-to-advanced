@@ -350,3 +350,13 @@ Route::get('relationship-has-one-through', function () {
     $user = User::first();
     return $user->postComment;
 });
+
+Route::get('relationship-one-to-many', function () {
+    $user = User::first();
+
+    // //fetching all records
+    // return $user->posts;
+
+    //fetching selected records
+    return $user->posts->where('is_published', false);
+});

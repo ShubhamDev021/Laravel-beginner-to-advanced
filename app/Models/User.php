@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function postComment() {
         return $this->hasOneThrough(Comment::class, Post::class);
     }
+
+    public function posts() {
+        return $this->hasMany(Post::class, 'user_id', 'id');
+    }
 }
