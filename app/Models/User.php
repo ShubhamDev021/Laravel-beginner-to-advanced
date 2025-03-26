@@ -45,4 +45,8 @@ class User extends Authenticatable
     public function post() {
         return $this->hasOne(Post::class, 'user_id', 'id')->where('title', 'test')->withDefault(['key' => 'Laravel post']);
     }
+
+    public function postComment() {
+        return $this->hasOneThrough(Comment::class, Post::class);
+    }
 }
