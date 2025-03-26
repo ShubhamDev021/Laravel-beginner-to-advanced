@@ -445,3 +445,191 @@ D-delete:
     DB::delete('delete posts where id = :id', ['id' => $id]);
 
 --------------------------------------------------------------------------------------------------------------------------
+What is one to one Eloquent relationship?
+
+One to one relationship states that one entity of table_1 will be related with only one entity of table_2
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform one to one Eloquent relationship?
+
+Please follow below steps:
+    1.  Create a foreign key in table ('posts')
+        (a).    defining foreign key without foreign key contraint
+                $table->integer('user_id');
+        (b).    defining foreign key contraint
+                $table->foreignId('user_id')->contrained();
+
+    2.  Define a relationship in table_1 ('users')
+        In user model (User.php):
+        public function post() {
+            return $this->hasOne(Post::class, 'user_id', 'id');
+        }
+
+        Here we can also write just return $this->hasOne(Post::class); as we have followed the laravel convention that 
+        (i).  'id' would be the primary key of 'users' table
+        (ii). the column 'user_id' i.e. id column of users table would be foreign key in 'posts' table
+
+    3.  Retrieve data
+        $user = User::first();
+        return $user->post;
+
+        Here as this is one to one relationship, so we are fetching that single post which is related with this first user
+        NOTE: here if multiple posts are created with same user_id then, also we will show only first encountered post
+
+--------------------------------------------------------------------------------------------------------------------------
+What is one to one inverse Eloquent relationship?
+
+Getting data of that single entity of table_1 which is related with single entity of table_2
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform one to one inverse Eloquent relationship?
+
+Please follow below steps:
+    1.  Create a foreign key in table ('posts')
+        discussed earlier
+
+    2.  Define a relationship in table_2 ('posts')
+        In post model (Post.php):
+        public function user() {
+            return $this->belongsTo(User::class, 'user_id', 'id');
+            OR
+            return $this->belongsTo(User::class);
+        }
+
+    3.  Retrieve data
+        $post = Post::first();
+        return $post->user;
+
+--------------------------------------------------------------------------------------------------------------------------
+What is has one through Eloquent relationship?
+
+If table_1 is one to one related with table_2 and table_2 is one to one related with table_3 then, we can get one to one data of table_3 using table_1
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform has one through Eloquent relationship?
+
+Please follow below steps:
+    1.  Create a foreign key in tables
+        discussed earlier
+
+    2.  Define a relationship in table_1 ('users')
+        In user model (User.php):
+        public function postComment() {
+            return $this->hasOneThrough(Comment::class, Post::class);
+        }
+
+    3.  Retrieve data
+        $user = User::first();
+        return $user->postComment;
+
+--------------------------------------------------------------------------------------------------------------------------
+What is one to many Eloquent relationship?
+
+One to many relationship states that one entity of table_1 will be related with many entities of table_2
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform one to many Eloquent relationship?
+
+Please follow below steps:
+    1.  Create a foreign key in table ('posts')
+        discussed earlier
+
+    2.  Define a relationship in table_1 ('users')
+        In user model (User.php):
+        public function posts() {
+            return $this->hasMany(Post::class, 'user_id', 'id');
+            OR
+            return $this->hasMany(Post::class);
+        }
+
+    3.  Retrieve data
+        $user = User::first();
+        return $user->posts;
+
+--------------------------------------------------------------------------------------------------------------------------
+What is one to many inverse Eloquent relationship?
+
+Getting data of that single entity of table_1 which is related with multiple entities of table_2
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform one to many inverse Eloquent relationship?
+
+Same as one to one inverse
+--------------------------------------------------------------------------------------------------------------------------
+What is has many through Eloquent relationship?
+
+If table_1 is (one to one)/(one to many) related with table_2 and table_2 is one to many related with table_3 then, we can get one to many data of table_3 using table_1
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform has many through Eloquent relationship?
+
+Please follow below steps:
+    1.  Create a foreign key in tables
+        discussed earlier
+
+    2.  Define a relationship in table_1 ('users')
+        In user model (User.php):
+        public function postComments() {
+        return $this->hasManyThrough(Comment::class, Post::class);
+    }
+
+    3.  Retrieve data
+        $user = User::first();
+        return $user->postComments;
+
+--------------------------------------------------------------------------------------------------------------------------
+What is many to many Eloquent relationship?
+
+Many to many relationship states that many entities of table_1 will be related with many entities of table_2
+This relation is established using a pivot table so, whenever we want to establish a many to many relationship, firstly we create a pivot table for that relationship.
+Then, we define relation in both the table's model.
+Then, we create an entry in pivot table using attach() function. If we want to delete that entry then, we use detach() function.
+At last, we retrieve the data.
+
+--------------------------------------------------------------------------------------------------------------------------
+How to perform many to many Eloquent relationship?
+
+Please follow below steps:
+    1. Create both tables
+        discussed earlier (php artisan make:model Role -m)
+
+    2. Create pivot table using migration and set foreign key of both tables here
+        php artisan make:migration create_role_user_table --create=role_user
+
+        In migration file,
+        Schema::create('role_user', function (Blueprint $table) {
+            $table->foreignId('role_id')->constrained();
+            $table->foreignId('user_id')->constrained();
+        });
+
+        NOTE: here we follow alphabetical order i.e. pivot table name will be post_user not user_post
+
+    3. Define relation
+        In user model (User.php):
+        public function roles() {
+            return $this->belongsToMany(Role::class);
+        }
+
+        In role model (Role.php):
+        public function users() {
+            return $this->belongsToMany(User::class);
+        }
+
+    4. Create/Delete entry in pivot table
+        $user = User::first();
+        $role = Role::first();
+
+        (a). create
+        $user->roles()->attach($role);
+        (b). delete
+        $user->roles()->detach($role);
+
+    5. Retrieve data
+        $user = User::first();
+
+        (a). getting roles associated with this user
+        return $user->roles;
+        (b). getting users associated with this role
+        return $role->users;
+
+--------------------------------------------------------------------------------------------------------------------------
