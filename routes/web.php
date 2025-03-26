@@ -365,3 +365,8 @@ Route::get('relationship-one-to-many-inverse', function () {
     $post = Post::first();
     return $post->user;
 });
+
+Route::get('relationship-has-many-through', function () {
+    $user = User::first();
+    return $user->postComments;
+});
