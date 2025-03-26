@@ -57,4 +57,8 @@ class User extends Authenticatable
     public function postComments() {
         return $this->hasManyThrough(Comment::class, Post::class);
     }
+
+    public function roles() {
+        return $this->belongsToMany(Role::class);
+    }
 }

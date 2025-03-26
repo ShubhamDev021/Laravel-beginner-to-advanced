@@ -6,6 +6,7 @@ use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Role;
 
 /*
 |--------------------------------------------------------------------------
@@ -369,4 +370,15 @@ Route::get('relationship-one-to-many-inverse', function () {
 Route::get('relationship-has-many-through', function () {
     $user = User::first();
     return $user->postComments;
+});
+
+Route::get('relationship-many-to-many', function () {
+    $user = User::first();
+    $role = Role::first();
+
+    // $user->roles()->attach($role);
+    // $user->roles()->detach($role);
+
+    return $user->roles;
+    // return $role->users;
 });
