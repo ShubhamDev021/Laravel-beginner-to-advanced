@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-
-            //defining foreign key without foreign key contraint
-            $table->integer('user_id');
-            
-            //defining foreign key contraint
-            // $table->foreignId('user_id')->constrained();
-            $table->string('title');
-            $table->text('description');
+            $table->foreignId('post_id')->constrained();
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('comments');
     }
 };
