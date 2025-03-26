@@ -360,3 +360,8 @@ Route::get('relationship-one-to-many', function () {
     //fetching selected records
     return $user->posts->where('is_published', false);
 });
+
+Route::get('relationship-one-to-many-inverse', function () {
+    $post = Post::first();
+    return $post->user;
+});
