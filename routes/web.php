@@ -382,3 +382,10 @@ Route::get('relationship-many-to-many', function () {
     return $user->roles;
     // return $role->users;
 });
+
+Route::get('relationship-sync-method', function () {
+    $user = User::first();
+    // $user->roles()->sync(2);
+
+    $user->roles()->sync([1, 2]);
+});

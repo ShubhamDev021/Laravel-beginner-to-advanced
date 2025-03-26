@@ -633,3 +633,10 @@ Please follow below steps:
         return $role->users;
 
 --------------------------------------------------------------------------------------------------------------------------
+What is the use of sync(), attach() and detach() method?
+
+attach()    - to add single(by passing just single id) or multiple(by passing an array of ids) entries in pivot table
+detach()    - to remove single(by passing just single id) or multiple(by passing an array of ids) entries in pivot table
+sync()      - to add only those provided entries in pivot table and rest of them are removed
+
+--------------------------------------------------------------------------------------------------------------------------
