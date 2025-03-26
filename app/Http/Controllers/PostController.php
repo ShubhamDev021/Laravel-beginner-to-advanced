@@ -41,7 +41,10 @@ class PostController extends Controller
     {
         // return $request->all();
 
-        Post::create($request->all());
+        $data = $request->all();
+        $data['user_id'] = 1;
+
+        Post::create($data);
 
         //creating a flash session
         $request->session()->flash('alert-success', 'Post created successfully');

@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\PostController;
 use App\Models\Post;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -330,4 +331,12 @@ Route::get('query-builder-raw-sql-query-using-named-bindings-delete-post/{id}', 
     DB::delete('delete posts where id = :id', ['id' => $id]);
 
     return "Data deleted successfully";
+});
+
+Route::get('relationship-one-to-one', function () {
+    $user = User::first();
+
+    //here as this is one to one relationship, so we are fetching that single post which is related with this first user
+    //NOTE: here if multiple posts are created with same user_id then, also we will show only first encountered post
+    return $user->post;
 });

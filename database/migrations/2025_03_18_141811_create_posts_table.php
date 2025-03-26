@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+
+            //defining foreign key without foreign key contraint
+            $table->integer('user_id');
+            
+            //defining foreign key contraint
             // $table->foreignId('user_id')->contrained();
             $table->string('title');
             $table->text('description');
