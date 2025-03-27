@@ -640,3 +640,11 @@ detach()    - to remove single(by passing just single id) or multiple(by passing
 sync()      - to add only those provided entries in pivot table and rest of them are removed
 
 --------------------------------------------------------------------------------------------------------------------------
+What is tinker in laravel?
+
+Laravel Tinker is a powerful REPL for the Laravel framework
+Tinker allows you to interact with your entire Laravel application on the command line, including your Eloquent models, jobs, events, and more. 
+To enter the Tinker environment, run the tinker Artisan command:
+php artisan tinker
+
+--------------------------------------------------------------------------------------------------------------------------
